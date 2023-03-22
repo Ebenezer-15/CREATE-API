@@ -14,8 +14,8 @@ const userInterface = readline.createInterface({
     output: process.stdout
 })
 userInterface.prompt()
-userInterface.on("line", async input =>{
-    openai.createChatCompletion({
+userInterface.on("line", async input => {
+    const res = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: [{role: "user", content: input}]
      })
